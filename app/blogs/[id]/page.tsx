@@ -38,6 +38,7 @@ const Page: React.FC = () => {
           setError("Blog not found.");
         }
       } catch (err) {
+        console.log(err)
         setError("Failed to fetch blog data.");
       } finally {
         setLoading(false);
