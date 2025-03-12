@@ -13,6 +13,8 @@ const connectdb = async (): Promise<void> => {
   try {
     await mongoose.connect(MONGO_URI);
     console.log("Connected to MongoDB");
+    console.log("Mongo URI:", process.env.MONGO_URI);
+
   } catch (err) {
     console.error(`Error connecting to MongoDB: ${err}`);
     process.exit(1);
