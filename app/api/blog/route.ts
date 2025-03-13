@@ -69,7 +69,7 @@ export async function GET(req : NextRequest){
             }
         }
         
-        const data = await blogmodel.find().sort(-1);
+        const data = await blogmodel.find().sort({ createdAt: -1 });
         if(data.length > 0){
             return NextResponse.json({ success: true, data });
         }
