@@ -60,7 +60,7 @@ export async function GET(req : NextRequest){
         const id = req.nextUrl.searchParams.get("id");
         console.log(id);
         if(id){
-            const blog = await blogmodel.findById(id);
+            const blog = await blogmodel.findById(id).sort(-1);
             if(blog){
                 return NextResponse.json({ success: true, data: blog});
             }
