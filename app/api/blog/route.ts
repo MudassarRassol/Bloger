@@ -69,9 +69,14 @@ export async function GET(req : NextRequest){
             }
         }
         
+        
+
         const data = await blogmodel.find().sort({ createdAt: -1 });
-        if(data.length > 0){
-            return NextResponse.json({ success: true, data });
+
+        const blogdata = data.reverse();
+
+        if(blogdata.length > 0){
+            return NextResponse.json({ success: true, data : blogdata });
         }
         else{
              return NextResponse.json({ success: false, msg: "No blog found" });
