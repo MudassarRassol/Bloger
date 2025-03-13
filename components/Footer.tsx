@@ -10,8 +10,10 @@ const Footer = () => {
         width={120}
         height={120}
         />
-        <p>
+        <p  >
         &copy; 2025 Bloger. All rights reserved.
+         <br />
+        Mudassar Rasool
         </p>
             <div className='flex' >
                 <Image
